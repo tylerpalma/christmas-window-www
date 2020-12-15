@@ -28,33 +28,38 @@ export default {
     return {
       buttons: [
         {
-          text: 'Christmas Circle',
-          path: '/christmasCircle',
+          text: 'Christmas Buffering',
+          path: 'christmasCircle',
           isPending: false,
         },
         {
           text: 'Snowflakes',
-          path: '/snowflake',
+          path: 'snowflake',
           isPending: false,
         },
         {
           text: 'Yule Log',
-          path: '/fire',
+          path: 'fire',
           isPending: false,
         },
         {
-          text: 'Rainbow Circle',
-          path: '/rainbowCircle',
+          text: 'Holiday Rave',
+          path: 'bpm',
+          isPending: false,
+        },
+        {
+          text: 'Rainbow Cyclone',
+          path: 'rainbowCircle',
           isPending: false,
         },
         {
           text: 'Rainbow Glitter',
-          path: '/rainbowWithGlitter',
+          path: 'rainbowWithGlitter',
           isPending: false,
         },
         {
-          text: 'Pulse',
-          path: '/bpm',
+          text: 'Juggle',
+          path: 'juggle',
           isPending: false,
         },
       ]
@@ -63,7 +68,9 @@ export default {
   methods: {
     async submitChoice(item) {
       item.isPending = true;
-      await axios.get(`http://192.168.1.225${item.path}`);
+      await axios.post(`https://christmas-window.herokuapp.com/commands`, {
+        lightChoice: item.path,
+      });
       item.isPending = false;
     },
   },
