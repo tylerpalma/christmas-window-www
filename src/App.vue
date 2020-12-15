@@ -70,7 +70,7 @@ export default {
 
 <style lang="scss">
 body {
-  height: 100vh;
+  height: 100%;
   max-width: 100%;
   overflow-x: hidden;
   padding: 0;
@@ -84,8 +84,11 @@ body {
 }
 
 #app {
+  height: 100%;
+  width: 100%;
   padding: 0;
   margin: 0;
+  overflow: hidden;
 }
 
 .row {
