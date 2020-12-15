@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <div v-for="i in 200" :key="i" class="snow"></div>
+    <div class="snow-container">
+      <div v-for="i in 200" :key="i" class="snow"></div>
+    </div>
     <div class="row">
       <h1>Sandy Pointe Lights</h1>
     </div>
@@ -72,7 +74,6 @@ export default {
 body {
   height: 100%;
   max-width: 100%;
-  overflow-x: hidden;
   padding: 0;
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
@@ -84,11 +85,8 @@ body {
 }
 
 #app {
-  height: 100%;
-  width: 100%;
   padding: 0;
   margin: 0;
-  overflow: hidden;
 }
 
 .row {
@@ -127,6 +125,15 @@ body {
   $rand: random();
   $random_range: $min + floor($rand * (($max - $min) + 1));
   @return $random_range;
+}
+
+.snow-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 .snow {
