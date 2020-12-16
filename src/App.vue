@@ -34,7 +34,7 @@ export default {
         },
         {
           text: 'Snowflakes',
-          path: 'snowflake',
+          path: 'snowflakes',
           isPending: false,
         },
         {
